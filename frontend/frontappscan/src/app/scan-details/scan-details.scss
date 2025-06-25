@@ -1,0 +1,122 @@
+.scan-details-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem 3rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+
+  h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    color: #2563eb; // bleu vif
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+  }
+
+  .error {
+    color: #dc2626; // rouge vif
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    strong {
+      color: #444;
+      font-weight: 700;
+    }
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    color: #2563eb;
+    border-bottom: 3px solid #2563eb;
+    padding-bottom: 6px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 1.6rem;
+    margin-bottom: 2.5rem;
+
+    li {
+      margin-bottom: 0.9rem;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #333;
+
+      strong {
+        color: #dc2626; // rouge pour les titres vulnérabilités
+        font-weight: 700;
+      }
+
+      // Severity color badges
+      &::before {
+        content: attr(data-severity);
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        color: white;
+        vertical-align: middle;
+        background-color: #999;
+      }
+
+      // dynamic severity color with attribute binding (in html or ts)
+      &[data-severity="High"]::before {
+        background-color: #dc2626; // rouge vif
+      }
+      &[data-severity="Medium"]::before {
+        background-color: #fbbf24; // jaune vif
+        color: #333;
+      }
+      &[data-severity="Low"]::before {
+        background-color: #10b981; // vert vif
+      }
+      &[data-severity="Critical"]::before {
+        background-color: #b91c1c; // rouge foncé
+      }
+    }
+  }
+
+  .btn-download {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0.9rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.8);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

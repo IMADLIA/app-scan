@@ -1,0 +1,30 @@
+<div class="notification-container">
+    <h2>Paramètres de notification</h2>
+  
+    <div *ngIf="loading" class="loading">Chargement...</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+  
+    <form (ngSubmit)="savePreferences()" #notifForm="ngForm" *ngIf="!loading">
+      <label>
+        <input type="checkbox" [(ngModel)]="preferences.emailEnabled" name="emailEnabled" />
+        Activer notifications par email
+      </label>
+  
+      <label>
+        <input type="checkbox" [(ngModel)]="preferences.pushEnabled" name="pushEnabled" />
+        Activer notifications push
+      </label>
+  
+      <label>
+        URL Webhook:
+        <input type="text" [(ngModel)]="preferences.webhookUrl" name="webhookUrl" placeholder="https://example.com/webhook" />
+      </label>
+  
+      <button type="submit" [disabled]="notifForm.invalid">Sauvegarder</button>
+    </form>
+  
+    <button class="btn-send" (click)="sendNotification()" [disabled]="loading || !preferences">Envoyer Notification</button>
+
+  </div>
+  

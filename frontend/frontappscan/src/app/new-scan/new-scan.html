@@ -1,0 +1,26 @@
+<div class="new-scan-container">
+  <h2>Nouveau Scan</h2>
+
+  <form [formGroup]="scanForm" (ngSubmit)="onSubmit()" novalidate>
+    <label for="url">URL cible</label>
+    <input id="url" type="text" formControlName="url" placeholder="https://example.com" />
+    <div *ngIf="scanForm.controls['url'].invalid && scanForm.controls['url'].touched" class="error">
+      URL invalide ou manquante.
+    </div>
+
+    <label for="name">Nom (optionnel)</label>
+    <input id="name" type="text" formControlName="name" />
+
+    <label for="scan_type">Type de scan</label>
+    <select id="scan_type" formControlName="scan_type">
+      <option value="passif">Passif</option>
+      <option value="actif">Actif</option>
+    </select>
+
+    <button type="submit" [disabled]="isSubmitting || scanForm.invalid">
+      {{ isSubmitting ? 'Lancement...' : 'Lancer le Scan' }}
+    </button>
+  </form>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>

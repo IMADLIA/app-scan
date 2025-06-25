@@ -1,0 +1,44 @@
+<h2>Paramètres de notification</h2>
+<form (ngSubmit)="savePreferences()">
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.emailNotifications" name="emailNotifications" />
+    Notifications par email
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.pushNotifications" name="pushNotifications" />
+    Notifications push
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.criticalSeverity" name="criticalSeverity" />
+    Critiques
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.highSeverity" name="highSeverity" />
+    Hautes
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.mediumSeverity" name="mediumSeverity" />
+    Moyennes
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.lowSeverity" name="lowSeverity" />
+    Basses
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.scanCompleted" name="scanCompleted" />
+    À la fin du scan
+  </label>
+  <br />
+  <label>
+    <input type="checkbox" [(ngModel)]="notificationPrefs.scanFailed" name="scanFailed" />
+    Si le scan échoue
+  </label>
+  <br />
+  <button type="submit" class="btn btn-primary">💾 Sauvegarder</button>
+</form>

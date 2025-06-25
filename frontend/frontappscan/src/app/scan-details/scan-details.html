@@ -1,0 +1,22 @@
+<div class="scan-details-container">
+  <h2>Détails du Scan</h2>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="scan">
+    <p><strong>Nom :</strong> {{ scan.name }}</p>
+    <p><strong>URL :</strong> {{ scan.target }}</p>
+    <p><strong>Statut :</strong> {{ scan.status }}</p>
+    <p><strong>Vulnérabilités détectées :</strong> {{ scan.vulnerabilitiesCount }}</p>
+    <p><strong>Durée :</strong> {{ scan.duration }} secondes</p>
+
+    <h3>Vulnérabilités</h3>
+    <ul>
+      <li *ngFor="let vuln of vulnerabilities">
+        <strong>{{ vuln.title }}</strong> ({{ vuln.severity }}) — {{ vuln.description }}
+      </li>
+    </ul>
+
+    <button class="btn-download" (click)="downloadPdf()">Télécharger le rapport PDF</button>
+  </div>
+</div>

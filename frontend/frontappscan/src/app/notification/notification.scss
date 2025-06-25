@@ -1,0 +1,106 @@
+.notification-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #0077cc;
+    }
+  
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #333;
+  
+      input[type="checkbox"] {
+        margin-right: 10px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+  
+      input[type="text"] {
+        flex: 1;
+        margin-left: 10px;
+        padding: 0.4rem 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+  
+        &:focus {
+          outline: none;
+          border-color: #0077cc;
+          box-shadow: 0 0 5px #0077ccaa;
+        }
+      }
+    }
+  
+    button {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      background: #0077cc;
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  
+      &:hover:not(:disabled) {
+        background: #005fa3;
+      }
+  
+      &:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+      }
+    }
+  
+    .btn-send {
+      margin-top: 1.5rem;
+      background: #28a745;
+  
+      &:hover:not(:disabled) {
+        background: #1e7e34;
+      }
+    }
+  
+    .error {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f8d7da;
+      color: #721c24;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+    }
+  
+    .success {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #d4edda;
+      color: #155724;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: center;
+    }
+  
+    .loading {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-style: italic;
+      color: #666;
+    }
+  }
+  
